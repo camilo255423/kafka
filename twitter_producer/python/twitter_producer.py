@@ -14,11 +14,11 @@ class StdOutListener(StreamListener):
 
     def on_data(self, data):
         producer.send_messages("trump", data.encode('utf-8'))
-        print (data)
+        print("data", data)
         return True
 
     def on_error(self, status):
-        print(status)
+        print("status", status)
 
 
 kafka = KafkaClient("localhost:9092")
